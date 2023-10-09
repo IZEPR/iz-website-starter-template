@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
+  const handleClick = () => {
+    setCount(count + 1);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App text-center'>
+      <p className='text-3xl font-bold text-red-600'>
+        Hello React Dev! {count}
+      </p>
+      <button
+        className='rounded-sm bg-slate-200 px-2 py-0.5 hover:bg-slate-300'
+        onClick={handleClick}
+      >
+        Increment
+      </button>
     </div>
   );
 }
-
 export default App;
